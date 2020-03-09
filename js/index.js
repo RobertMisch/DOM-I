@@ -54,9 +54,35 @@ const navContentArray = Object.values(siteContent.nav);
 // console.log(siteContent["nav"]["nav-item-1"]);
 for (let i=0; i<navNodeList.length; i++){
   navArray[i].textContent = navContentArray[i];
-  
 }
 // console.log(navArray);
+
+//nav step 3
+// const makeNavGreen = document.querySelectorAll('a');
+// const makeNavGreenArray = Array.from(makeNavGreen);
+// makeNavGreenArray.forEach(item =>{
+//   item.style.color= 'green'
+// })
+// // makeNavGreen.style.color= 'green';
+// // document.querySelector('a').style.color = 'green';
+
+let newNavButton1 = document.createElement('a')
+let newNavButton1text = document.createTextNode("Filler")
+newNavButton1.appendChild(newNavButton1text)
+document.querySelector('nav').appendChild(newNavButton1)
+
+let newNavButton2 = document.createElement('a')
+let newNavButton2text = document.createTextNode("MyAction")
+newNavButton2.appendChild(newNavButton2text)
+document.querySelector('nav').appendChild(newNavButton2)
+
+const makeNavGreen = document.querySelectorAll('a');
+const makeNavGreenArray = Array.from(makeNavGreen);
+makeNavGreenArray.forEach(item =>{
+  item.style.color= 'green'
+})
+// makeNavGreen.style.color= 'green';
+// document.querySelector('a').style.color = 'green';
 
 //***************** CTA ******************
 
@@ -76,9 +102,16 @@ ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
 
 /******************** Main Content ******************/
 const topContentArray = Object.values(siteContent.maincontent);
+// document.querySelector()
+
+document.querySelector('.text-content').style.padding = '0 2%';
 // console.log(topContentArray);
 // console.log(siteContent["main-content"][1]); cant do this
 //top content
+
+// document.querySelector('.top-content').style.display = 'flex'; 
+// document.querySelector('.top-content').style.justifyContent = 'space-around';
+
 document.querySelector('.top-content .text-content h4').textContent= topContentArray[0];
 document.querySelector('.top-content .text-content p').textContent= topContentArray[1];
 document.querySelector('.top-content .text-content:nth-of-type(2) h4').textContent= topContentArray[2];
