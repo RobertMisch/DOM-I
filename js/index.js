@@ -66,6 +66,10 @@ for (let i=0; i<navNodeList.length; i++){
 // // makeNavGreen.style.color= 'green';
 // // document.querySelector('a').style.color = 'green';
 
+// function makeblue(item){
+//   item.style.color='blue'
+// }
+
 let newNavButton1 = document.createElement('a')
 let newNavButton1text = document.createTextNode("Filler")
 newNavButton1.appendChild(newNavButton1text)
@@ -80,6 +84,10 @@ const makeNavGreen = document.querySelectorAll('a');
 const makeNavGreenArray = Array.from(makeNavGreen);
 makeNavGreenArray.forEach(item =>{
   item.style.color= 'green'
+  item.href='#'
+  // let count=0;
+  // item.addEventListener("click", function(){item.style.color = 'blue';})
+  item.addEventListener("click", function(){item.style.color = 'red'})
 })
 // makeNavGreen.style.color= 'green';
 // document.querySelector('a').style.color = 'green';
@@ -102,7 +110,20 @@ ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
 
 /******************** Main Content ******************/
 const topContentArray = Object.values(siteContent.maincontent);
-// document.querySelector()
+// console.log(document.querySelectorAll('.main-content h4, .main-content p'))
+// const topContentNode = document.querySelectorAll('.main-content h4, .main-content p')
+const topContentNodeArray = Array.from(document.querySelectorAll('.main-content h4, .main-content p, .main-content img'))
+// console.log(topContentNodeArray)
+
+topContentNodeArray.forEach((item, i) => {
+  if(i === 4){
+    // const middle_img = document.querySelector('#middle-img');
+    item.setAttribute('src', topContentArray[i]);
+    item.style.width = '100%';
+  }else{
+    item.textContent= topContentArray[i];
+  }
+})
 
 document.querySelector('.text-content').style.padding = '0 2%';
 // console.log(topContentArray);
@@ -112,23 +133,23 @@ document.querySelector('.text-content').style.padding = '0 2%';
 // document.querySelector('.top-content').style.display = 'flex'; 
 // document.querySelector('.top-content').style.justifyContent = 'space-around';
 
-document.querySelector('.top-content .text-content h4').textContent= topContentArray[0];
-document.querySelector('.top-content .text-content p').textContent= topContentArray[1];
-document.querySelector('.top-content .text-content:nth-of-type(2) h4').textContent= topContentArray[2];
-document.querySelector('.top-content .text-content:nth-of-type(2) p').textContent= topContentArray[3];
+// document.querySelector('.top-content .text-content h4').textContent= topContentArray[0];
+// document.querySelector('.top-content .text-content p').textContent= topContentArray[1];
+// document.querySelector('.top-content .text-content:nth-of-type(2) h4').textContent= topContentArray[2];
+// document.querySelector('.top-content .text-content:nth-of-type(2) p').textContent= topContentArray[3];
 
-//middle img
-const middle_img = document.querySelector('#middle-img');
-middle_img.setAttribute('src', siteContent["maincontent"]["middle-img-src"]);
-middle_img.style.width = '100%';
+// //middle img
+// const middle_img = document.querySelector('#middle-img');
+// middle_img.setAttribute('src', siteContent["maincontent"]["middle-img-src"]);
+// middle_img.style.width = '100%';
 
-//bottom content
-document.querySelector('.bottom-content .text-content h4').textContent= topContentArray[5];
-document.querySelector('.bottom-content .text-content p').textContent= topContentArray[6];
-document.querySelector('.bottom-content .text-content:nth-of-type(2) h4').textContent= topContentArray[7];
-document.querySelector('.bottom-content .text-content:nth-of-type(2) p').textContent= topContentArray[8];
-document.querySelector('.bottom-content .text-content:nth-of-type(3) h4').textContent= topContentArray[9];
-document.querySelector('.bottom-content .text-content:nth-of-type(3) p').textContent= topContentArray[10];
+// //bottom content
+// document.querySelector('.bottom-content .text-content h4').textContent= topContentArray[5];
+// document.querySelector('.bottom-content .text-content p').textContent= topContentArray[6];
+// document.querySelector('.bottom-content .text-content:nth-of-type(2) h4').textContent= topContentArray[7];
+// document.querySelector('.bottom-content .text-content:nth-of-type(2) p').textContent= topContentArray[8];
+// document.querySelector('.bottom-content .text-content:nth-of-type(3) h4').textContent= topContentArray[9];
+// document.querySelector('.bottom-content .text-content:nth-of-type(3) p').textContent= topContentArray[10];
 
 
 /* contact section */
