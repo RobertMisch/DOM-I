@@ -57,6 +57,21 @@ for (let i=0; i<navNodeList.length; i++){
 }
 // console.log(navArray);
 
+/*kory's solution .forEach navLinks[i].textContent = siteContent["nav"][`nav-item-${i+1}`]
+
+chris's solution: const navObjKey = Object.keys(siteContent['nav']);
+navObjKey.forEach((element) => {
+  if (element.includes('nav')) {
+    navVal.push(element);
+  }
+});
+
+for (let i = 0; i < navVal.length; i++) {
+  nava[i].textContent = siteContent['nav'][navVal[i]];
+};
+
+ */
+
 //nav step 3
 // const makeNavGreen = document.querySelectorAll('a');
 // const makeNavGreenArray = Array.from(makeNavGreen);
